@@ -1,0 +1,45 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.8em;
+}
+
+#main_form {
+	margin-top: 30px;
+	margin-left: 30px;
+}
+
+
+input {
+	display: inline-block;
+	margin-top: 10px;
+}
+
+#main_form input {
+	margin-bottom: 10px;
+}
+
+.ui-button-text {
+	font-size: 14px;
+}
+
+#inner_category_form {
+	margin-top: 10px;
+}	
+
+input[type='submit'] {
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 30px;
+	margin-top: 30px;
+	padding: 10px;
+	border: 0px;
+	background: #00b294;
+	width: 300px;
+	font-size: 18px;
+	color: #FFF;
+	cursor: pointer;
+	transition: background 0.3s;
+}
+input[type='submit']:hover {
+	background: #219380;
+}

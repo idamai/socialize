@@ -1,0 +1,345 @@
+/* 
+
+darkgreen theme #00b294
+
+
+*/
+
+body {
+	-webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+	font-family: "Open Sans", "Segoe UI", sans-serif;
+	font-size: 14px;
+}
+
+h1 {			
+	font-size: 18px;	
+}
+
+h2 {
+	font-size: 2em;
+	line-height: 2.5em;
+}
+
+#header {
+	width: 100%;
+	height: 100px;
+	border-bottom: 1px solid rgba(177, 228, 211, 0.4);
+}
+
+.nav a {
+	font-family: "Open Sans", "Segoe UI", sans-serif;
+	text-decoration: none;
+	font-size: 16px;
+	line-height: 1.2em;
+	color: #000;
+	font-weight: 600;
+	margin-top: 15px;
+	text-align: center;
+	padding: 10px;
+	width: 70px;
+	background: #caefe9;
+	float: right;
+	border: 3px solid #00b294;
+	margin-right: 20px;
+	height: 40px;
+	display: block;	
+}	
+
+.nav a:hover {
+	background: #86e5d5;
+	
+}
+
+#logo {		
+	margin-left: 16px;
+	width: 300px;
+	height: 100px;
+	float: left;
+}
+
+#user {	
+	float: right;
+	margin-right: 15px;
+	margin-top: 15px;
+}
+
+#user-info {
+	color: #949494;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 16px !important;
+	font-weight: 600;
+	float: right;
+	margin-top: 22px;
+	padding: 10px !important;
+	padding-right: 15px !important;
+	margin-right: -11px;
+	border: 5px solid #00b294;
+	border-right: none;
+	line-height: 16px !important;
+}
+
+
+#log_out {	
+	width: 100px;
+	float: right;
+	clear: right;
+	margin-top: 15px;
+}
+
+#groups {			
+	margin-bottom: 50px;
+	width: 200px;
+	float: left;
+	background: rgba(177, 228, 211, 0.1);
+	border-right: 1px solid rgba(177, 228, 211, 0.4);
+	border-bottom: 1px solid rgba(177, 228, 211, 0.4);
+}
+
+#groups h1 {	
+	text-shadow: 0 0 1px rgba(51,51,51,0.5);
+	text-align: center;
+	padding: 10px;
+	color: #FFF;
+	background: #00b294;	
+}
+
+#groups img {	
+	position: absolute;
+	margin-top: 9px;
+	margin-left: 7px;
+}
+
+#groups a {		
+	padding: 10px 30px;	
+	font-size: 14px;
+	text-decoration: none;
+	color: #00b294;
+}
+
+#groups a.selected {		
+	font-weight: 600;
+}
+
+#groups a:hover {	
+	text-decoration: none;
+	background: rgba(177, 228, 211, 0.2);
+	color: #00b294;
+}
+
+/********************* STAT *************************/
+
+#stat-wrapper {
+	font-family: 'Open Sans' , sans-serif;
+	margin-left: 30px;
+	margin-top: 30px;
+	float: left;
+	font-size: 16px;
+	color: #7b7b7b;
+}
+
+
+#stat-wrapper h1{
+	font-family; 'Open Sans', sans-serif;
+	color: #00b294;
+	display: none;
+	font-size: 26px;
+	margin-bottom: 20px;
+}
+
+
+#desc-wrapper {
+	float: left;
+	width: 400px;
+	padding-top: 30px;
+	padding-left: 30px;
+	margin-bottom: 50px;
+}
+
+
+#desc-wrapper #grp_descr {
+}
+
+#desc-wrapper #grp_descr h1 {
+	font-family; 'Open Sans', sans-serif;
+	float: left;
+	width: 400px;
+	display: block;
+	margin-bottom: 10px;
+	color : #00b294;
+}
+
+
+#desc-wrapper #description {
+	display: block;
+	line-height: 1.7em;
+}
+
+#desc-wrapper #grp_stats {
+	margin-top: 30px;
+	display: block;
+	margin-bottom: 10px;
+	color : #00b294;
+}
+
+#statistics1, #statistics2, #statistics3{
+	font-family; 'Open Sans', sans-serif;
+	display: block;
+	line-height: 1.7em;
+}
+
+
+
+
+
+
+
+
+
+
+
+/************** CONTENT **********************/
+
+
+
+#content {	
+	float: left;		
+	padding-left: 30px;	
+	padding-top: 30px;
+	padding-right: 30px;
+}
+
+#content h1 {	
+	color: #00b294;	
+	margin-bottom: 20px;
+	
+}
+
+#group_name {
+
+}
+
+#write_post {
+
+}
+
+#write_post {
+	font-family: 'Open Sans', 'Segoe-UI', sans-serif; 
+	display: block;
+	width: 600px;
+	margin-left: -1px;
+	padding: 10px;
+	height: 20px;
+	border: 1px solid #DCE6E4;
+	resize: none;
+	line-height: 20px;
+	font-size: 14px;
+}
+
+#write_post:focus {
+	outline: none;
+	border: 1px solid rgba(177, 228, 211, 1);
+}
+
+#content .post_message {
+	cursor: pointer;
+	padding: 7px;
+	margin-top: 10px;
+	margin-bottom: 35px;
+	display: block;
+	float: right;
+	background: #00b294;
+	color: #FFF;
+	border: 1px solid #00b294;
+}
+
+#content .post_message:hover {
+	background: #00CCAA;
+}
+
+
+#group_posts ul {
+	
+}
+
+#group_posts li {
+	margin: 20px 0;
+	padding: 10px;
+	width: 600px;		
+	background: rgba(177, 228, 211, 0.3);
+	border: 1px solid rgba(177, 228, 211, 0.5);
+}
+
+#group_posts li div {
+	padding: 10px;
+}
+
+#group_posts div.poster {
+	font-weight: bold;	
+}
+
+#group_posts div.time {	
+	float: left;
+	font-style: italic;
+	color: #ABABAB;	
+}
+
+.post {
+	overflow: hidden;
+}
+
+.post .message {
+	line-height: 18px;
+}
+
+.post textarea {
+	border: 1px solid #DCE6E4;
+	display: block;
+	float: left;
+	font-family: 'Open Sans', 'Segoe-UI', sans-serif;
+	padding: 10px;
+	height: 20px;
+	line-height: 20px;
+	width: 490px;
+	margin-right: 14px;
+	margin-bottom: 10px;
+	resize: none;	
+	font-size: 14px;
+}
+.post textarea:focus {
+	outline: none;
+	border: 1px solid rgba(177, 228, 211, 1);
+}
+
+.post .confirm  {
+	margin-top: 7px;
+	clear: right;
+	display: block;
+	float: left;
+	padding: 5px;
+	padding-bottom: 0;
+	border: 1px solid rgba(177, 228, 211, 0);
+}
+
+/* icon for delete and update */
+.post .delete, .post .edit {
+	padding: 5px;
+	padding-bottom: 0;
+	margin-left: 5px;
+	display: inline-block;
+	float: right;
+	border: 1px solid rgba(177, 228, 211, 0);
+}
+
+.post .delete:hover, .post .edit:hover, .post .confirm:hover {
+	background: rgba(177, 228, 211, 0.5);
+	border: 1px solid rgba(177, 228, 211, 0.7);
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+	display: block;
+}

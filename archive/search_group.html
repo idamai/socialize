@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SOCialize Groups</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+</head>
+<body>
+
+<div id="categoriesWrapper">
+	<span style="display:block">Categories</span>
+	<div id="categories" style="width:150px"></div>
+</div>
+<div id="groupsWrapper">
+	<span style="display:block">Interest Groups</span>
+	<select id="groups" size="10" style="width:150px"></select>
+</div>
+
+<div id="groupDetailWrapper">
+</div>
+
+<div id="test"></div>
+
+<script>
+$(document).ready(function(e) {
+    $.ajax({
+		type: "POST",
+		url: "php/getGroups.php",		
+		success: function(grpList) {
+			$("#groups").html(grpList);			
+		},		
+		error: function(msg) {
+			console.log(msg);
+		}
+	})
+	$.ajax({
+		type: "POST",
+		url: "php/getCategories.php",		
+		success: function(grpList) {
+			$("#categories").append("<input type='checkbox' name='categories' value='all' id='all'/><label for='all'>all</label><br/>").append(grpList);
+			$("#categories input").each(function() {		
+				$(this).attr("disabled",true);
+			})			
+			$("#all").attr("checked", true).attr("disabled", false);
+		},		
+		error: function(msg) {
+			console.log(msg);
+		}
+	})
+	
+	
+}); 
+
+
+$("#groups").change(function(e) {	
+    var selectedGroup = $("#groups :selected").text();
+	 $.ajax({
+		type: "POST",
+		url: "php/groupInfo.php",		
+		success: function(groupDetail) {
+			$("#groupDetailWrapper").html(groupDetail);			
+		},
+		data: "selectedGroup=" + selectedGroup,
+		error: function(msg) {			
+		}
+	});			
+	
+});
+
+$("#categories").change(function(e) {   	
+	
+	var allCategories = [];
+	 $('#categories :checked').each(function() {
+	   allCategories.push($(this).val());
+	 });
+	 //$('#t').val(allVals)
+	
+	console.log(allCategories);
+	 $.ajax({
+		type: "POST",
+		url: "php/getGroupsOfCategories.php",		
+		success: function(groups) {
+			$("#test").html(groups);			
+		},
+		data: {allCategories: allCategories},
+		error: function(msg) {			
+		}
+	})	
+	
+	if (!$('#all').prop('checked')) {
+		$("#categories input").each(function() {					
+				$(this).removeAttr('disabled');
+			})	
+	} else {
+		$("#categories input").each(function() {					
+				$(this).attr('disabled', true);
+				$('#all').attr('disabled', false); })
+	}
+});
+
+</script>
+
+</body>
+</html>

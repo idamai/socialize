@@ -1,0 +1,164 @@
+#search_by_cat {
+	padding-left: 30px;
+	overflow: hidden;
+	margin-bottom: 50px;
+}
+
+#search_by_cat select {
+	font-family: "Open Sans", "Segoe UI", sans-serif;
+	display: block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	height:30px; 
+	float: left;
+	margin-right: 20px;
+	font-size: 16px;
+}
+
+
+.result_wrapper {
+	float: left;
+	width: 300px;
+	margin-right: 20px;
+}
+
+.result {
+	background: #f6f6f6;
+	border: 5px solid #CCC;	
+	height: 220px;
+	overflow-y	: auto;		
+	display: block;
+	font-size: 16px;
+	color: #6d6d6d;
+}
+
+.result a {
+	text-decoration: none;
+	color: #6d6d6d;
+	padding: 10px;
+	display: block;
+	font-size: 16px;
+}
+
+.result a:hover {
+	background: #eaeaea;
+}
+
+.result a.selected {
+	font-weight: 600;
+	color: #000;
+}
+
+#popup {
+	text-align: center;	
+}
+
+input[type="submit"] {
+	font-family: "Open Sans", "Segoe UI", sans-serif;
+	background: #00b294;
+	color: #FFF;
+	font-weight: 600;
+	float: right;
+	display: block;
+	border: 1px solid #5cc1b0;
+	padding: 10px;
+	font-size: 16px;
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background: #008972;	
+}
+
+
+.desc {
+	padding: 10px;
+	background: #f6f6f6;
+	border: 5px solid #CCC;
+	float: left;
+	height: 260px;
+	overflow-y: auto;
+	width: 700px;
+	font-size: 14px;
+	line-height: 25px;
+}
+
+
+
+#search_by_email {
+	padding-top: 10px;
+	clear: both;
+	padding-left: 30px;
+	border-top: 1px solid #CCC;
+	font-family: "Open Sans", "Segoe UI", sans-serif;
+	margin-bottom: 50px;
+	overflow: hidden;
+}
+
+#search_by_email h3 {
+	font-size: 16px;
+	color: #707070;
+	margin-bottom: 10px;
+	padding-left: 2px;
+}
+
+#search_by_email input {
+	display: block;
+	float: left;
+}
+
+#search_by_email input[type=text] {
+	font-family: "Open Sans", "Segoe UI", sans-serif;
+	font-size: 16px;
+	padding: 10px;
+	width: 485px;
+	border: 5px solid #CCC;
+	margin-top: 10px;
+	border-right: none;
+	margin-bottom: 0px;
+}	
+
+#search_by_email input[type=submit] {
+	font-family: "Open Sans", "Segoe UI", sans-serif;
+	display: block;
+	float: left;
+	padding: 10px;
+	margin-top: 10px;
+	margin-left: 0px;
+	border: 5px solid #CCC;
+	border-left: none;
+	margin-bottom: 0px;
+}	
+
+#search_by_email input:focus {
+	outline: 0;
+	background: #f2f2f2;
+}	
+
+#search_by_email .result {
+	font-family: "Open Sans", "Segoe UI", sans-serif;
+	clear: both;
+	width: 619px;
+	margin: 0px;
+	padding: 0px;
+	border-top: 0px;	
+}
+
+#search_by_email  #email_join {
+	font-family: "Open Sans", "Segoe UI", sans-serif;
+	border: 5px solid #CCC;
+	border-top: 0px;
+	clear: both;
+	width: 629px;	
+	margin: 0px;
+	padding: 10px;	
+}
+
+
+
+
+
+
+
+

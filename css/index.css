@@ -1,0 +1,181 @@
+/*
+darkgreen theme #00b294
+*/
+
+@font-face
+{
+	font-family: roboto;
+	src: url('../font/roboto.ttf');    	
+}
+
+@font-face
+{
+	font-family: robotol;
+	src: url('../font/robotol.ttf');    	
+}
+
+
+
+body {	
+	background: url("../img/pat.png");
+}
+
+header {
+	height: 100px;
+	background: #FFF;		
+}
+
+header img {
+	margin-left: 100px;
+	display: block;
+	float: left;
+}
+
+#home {
+	position: absolute;
+	top: 150px;
+	left: 110px;
+}
+
+#login {
+	float: right;
+	margin-right: 200px;
+	margin-top: 35px;
+}
+
+#login label {
+	
+}
+
+#login input {
+	padding: 5px;
+	margin-right: 10px;	
+}
+
+#login input[type='submit'] {
+	background: #00b294;
+	padding: 5px;
+	color: #FFF;
+	width: 100px;
+	border: 0px;
+	height: 30px;
+	cursor: pointer;
+	font-size: 1.1em;
+}
+#login input[type='submit']:hover {
+	background: #00C9A7;
+}
+
+
+#signup {	
+	margin-left: 600px;
+	margin-top: 25px;
+}
+
+#signup h1 {	
+	display: block;
+	padding-top: 35px;
+	padding-bottom: 20px;
+	font-family: 'roboto', sans-serif;
+	font-size: 4em;
+	color: #525252;
+	margin-left: 110px;
+}
+
+#signup form {	
+	display: block;
+	margin-left: 113px;	
+}
+
+#signup input {	
+	outline: 0px;
+	border: 0px;
+	margin-bottom: 10px;
+	display: block;	
+	padding: 5px;
+	padding-left: 10px;
+	font-size: 1.4em;
+	font-family: 'robotol', sans-serif;
+}
+#signup input:focus {
+	background: #F0F0F0;
+}
+
+#firstName, #lastName {
+	width: 200px;
+	margin-right: 10px;
+	float: left;
+}
+
+#email_signup, #password_signup {
+	width: 425px;
+	clear: left;
+}
+
+#signup input[type='submit'] {
+	color: #efefef;
+	clear: both;
+	float: left;
+	background: #00b294;
+	margin-top: 30px;
+	margin-left: 0px;
+	cursor: pointer;
+	padding: 5px 10px;
+	border: 1px solid #48cfb8;
+	font-size: 24px;
+	transition: background 0.2s;
+}	
+
+
+#gen {
+	float: left;
+	width: 200px;
+	margin-right: 25px;
+}
+#signup input[type='submit']:hover {
+	float: left;
+	background: #11a48b;
+	cursor: pointer;
+}	
+
+.radio input[type='radio'], .radio label {
+	display: block;
+	float: left;
+	font-size: 16px;
+}
+
+.radio label  {
+	margin-left: 5px;
+	margin-right: 15px;
+	min-width: 60px;
+}
+
+#birthday {
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 2em;
+	color: #525252;
+	display: inline-block;
+	float: left;
+}
+
+#birthday  input {
+	font-size: 16px;
+}
+
+.radio {
+	margin: 0 auto;
+	clear: left;
+}
+
+.radio h3 {
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 2em;
+	clear: both;
+	color: #525252;
+}
+
+
+
+

@@ -1,0 +1,4 @@
+syntax: glob
+nbproject/**
+php/login.php.orig
+php/userprofile.php.orig

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Welcome to SOCialize!</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script>
+var firstName, lastName;
+if($.cookie("first_name") != null) {	
+	firstName = $.cookie("first_name");
+};
+if($.cookie("last_name") != null) {	
+	lastName = $.cookie("last_name");
+};
+if (firstName == null || lastName == null) {
+	window.location = "index.html";	
+}
+
+$(document).ready(function(e) {
+    $("#userWelcome").text("Welcome back " + firstName + " " + lastName);
+});
+</script>
+</head>
+<body>	
+	<div id="userWelcome"></div>
+	<a href="creategroup.html">create a group!</a>
+	<a href="searchgroup.html">search a group!</a>
+<<<<<<< local
+	<a href="php/deletegroup.php">delete a group!</a>
+=======
+    <a href="php/userprofile.php">view your profile!</a>
+>>>>>>> other
+</body>
+</html>

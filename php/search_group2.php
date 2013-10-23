@@ -1,0 +1,25 @@
+<?php // searchgrp.php
+require_once 'includes/connection.php'; 
+
+$whatiwant = $_POST["namesearch"];
+$result = mysql_query("SELECT * FROM `interest_groups` m WHERE m.name LIKE '%$whatiwant%' ");
+$num_results = mysql_num_rows($result);
+
+if ($num_results > 0) {
+	while($row = mysql_fetch_array($result))
+  {
+	echo "Interest Group Name: <a href='group.html?group={$row['name']}'>" . $row['name'] . "</a>";
+	echo "</br>";
+	echo "Group Description: " . $row['description'];
+	echo "</br>";
+	echo "</br>";
+	}
+}
+else {
+	echo ("<SCRIPT LANGUAGE='JavaScript'>
+        window.alert('Result Not Found!!')
+        window.location.href='\searchgroup.php'
+        </SCRIPT>");
+}
+
+?>

@@ -1,0 +1,27 @@
+<?php session_start(); ?>
+<?php	
+	require_once('includes/connection.php');
+	require_once('includes/safety_feature.php'); 
+	
+	if(!empty($_POST)){
+		$password = sanitizeString($_POST['password']);
+		$password = sha1($password);
+		$email = sanitizeString($_POST['email']);
+		$query = "SELECT u.email, u.password FROM users u WHERE u.email = '{$email}' AND u.password = '{$password}'";
+		$result_set = mysql_query($query);			
+		$result = mysql_fetch_array($result_set);
+		if($result) {
+			$_SESSION['user'] = $result['email'];
+			$timestamp = time();
+			header("Location: main.html");
+			exit;
+		} else {
+			header("Location: index.html");
+			//echo "</br>Wrong email/password combination!";
+			//need to put notification here				
+		}
+	} else {
+		header("Location: index.html");
+		exit;
+	}
+?>

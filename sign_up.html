@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Welcome to SOCialize</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<label for="firstName">First Name</label>
+<input type="text" id="firstName" name="firstName"/>
+<label for="lastName">Last Name</label>
+<input type="text" id="lastName" name="lastName"/><br/>
+<label for="email">Email</label>
+<input type="email" id="email" name="email"/>
+<label for="password">Password</label>
+<input type="password" id="password" name="password"/><br/>
+<label for="register">Register</label>
+<input type="button" id="register" name="register" value="register" style="width:100px"/>
+
+<div id="message"/>
+
+<script>
+
+$("#register").click(function(e) {
+	var email = $("#email").val();
+	var password = $("#password").val();
+	var fName = $("#firstName").val();
+	var lName = $("#lastName").val();
+	var gender = 'M';
+	var privacy = 1;
+  	
+	if(!(email == "" || password == "")) {
+		$.ajaxSetup({
+			error: function(jqXHR, exception) {
+				if (jqXHR.status === 0) {
+					alert('Not connect.\n Verify Network.');
+				} else if (jqXHR.status == 404) {
+					alert('Requested page not found. [404]');
+				} else if (jqXHR.status == 500) {
+					alert('Internal Server Error [500].');
+				} else if (exception === 'parsererror') {
+					alert('Requested JSON parse failed.');
+				} else if (exception === 'timeout') {
+					alert('Time out error.');
+				} else if (exception === 'abort') {
+					alert('Ajax request aborted.');
+				} else {
+					alert('Uncaught Error.\n' + jqXHR.responseText);
+				}
+			}
+   		});
+		
+		
+		
+		$.ajax({
+			type: "POST",
+			url: "php/register.php",
+			data: 'email=' + email +	
+				'&password=' + password +
+				'&firstName=' + fName +
+				'&lastName=' + lName +
+				'&gender=' + gender +
+				'&privacy=' + privacy,
+			success: function(msg) {
+				$("#message").text("success");				
+			},
+			error: function(msg) {
+				$("#message").text(msg);
+			}
+		})
+	}
+});
+</script>
+
+</body>
+</html>

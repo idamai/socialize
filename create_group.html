@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">	
+        <title>Create a group</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<link rel="stylesheet" type="text/css" href="css/create.css"/>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    </head>
+    <body>
+	<div id="header">
+		<div id="logo"><a href="main.html"><img src="img/logo.png"/></a></div>
+		<div id="log_out"><a href="php/logout.php"><img width=60 src="img/logout.png"/></a></div>
+		<div class="nav" id="create_group"><a href="create_group.html">Create group</a></div>
+		<div class="nav" id="join_group"><a href="join_group.html">Join<br/>group</a></div>
+		<div id="user"><a href="profile.html"><img width=60 src="img/profile.png"/></a></div>
+		<div id="user-info"></div>
+		<script>
+		$.post('php/user-info.php', function(info){
+			$('#user-info').text(info);
+		})
+		</script>
+	</div>
+	
+	<div id='main_form'>
+	<form action="php/create_group.php" method = "post">
+		Group Name :
+		<input type = "text" name = "name"/><br/>		
+		Description<br/>
+		<textarea cols="40" rows="5" name="description"></textarea><br/>			
+		Group type: 
+		<select name = "isprivate">
+		<option value = 0>Open</option>
+		<option value = 1>Closed</option>
+		</select><br/>
+		<!-- Category section -->
+		<div id='inner_category_form'>
+		Your group category :<br/>
+		<div id='cat_display'></div>
+		<script>
+		$(document).ready(function() {
+		$.ajax({
+			method: 'get',
+			url: 'php/get_categories.php',
+			success: function(returned_cat_as_radio) {		
+				$('#cat_display').hide();			
+				$('#cat_display').html(returned_cat_as_radio).slideDown();
+			}
+		}).done(function() {
+			$( "#radio" ).buttonset();
+		});
+		});
+		</script>
+		</div> 
+		<!-- end of category div -->
+		<input type="submit" value="Create Group" />
+	</form>
+	</div>	
+</body>
+</html>

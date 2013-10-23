@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<title>Find your groups</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css" />
+<style>
+.ui-autocomplete-loading {
+	background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat;
+}
+<!--
+font size for the suggestion list
+-->
+</style>
+<script>
+  $(function() {
+    function log( message ) {
+      $( "<div>" ).text( message ).prependTo( "#log" );
+      $( "#log" ).scrollTop( 0 );
+    }
+ 
+    $( "#groupNameSearch" ).autocomplete({
+		delay: 0,
+      source: "php/getGroupsArr.php",
+      minLength: 1,
+      select: function( event, ui ) {
+        log( ui.item ?
+          "Selected: " + ui.item.value + " aka " + ui.item.id :
+          "Nothing selected, input was " + this.value );		  
+      }	 
+    });
+  });
+  </script>
+<body>
+<h1>Search for group</h1>
+<form action="catsearch.php" method="post">
+  Search by Category:
+  <input type="text" name="catesearch">
+  <input type="submit" value="Search">
+</form>
+<form action="searchgrp.php" method="post"">
+  <div class="ui-widget" style="display: inline-block">
+  <label for="groupNameSearch">
+  Search by name
+  <input type="text" name="namesearch" id="groupNameSearch">
+  </div>
+  <input type="submit" value="Search">
+</form>
+<br>
+<br>
+</form>
+</body>
+</html>

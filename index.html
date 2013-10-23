@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Welcome to SOCialize!</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<link rel="stylesheet" type="text/css" href="css/index.css"/>
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+<script>
+
+if($.cookie("first_name") != null) {	
+	window.location = "main.html";
+};
+
+</script>
+</head>
+<body>
+<header>
+<img src='img/logo.png'/>
+<div id="login">	
+    <form action="php/login.php" method="post">
+    <label for="email">Email</label>
+    <input type = "text" id="email" name = "email" maxlength = "128"/>
+    <label for="password">Password</label>
+    <input type = "password" id="password" name = "password" maxlength = "30"/>
+    <input type="submit" value="Log In" />
+  </form>
+</div>
+</header>
+
+<img id='home' src='img/home.png' alt='home picture'></img>
+
+<div id="signup">
+	<h1>Sign Up</h1>
+    <form action="php/sign_up.php" method="post">   
+    <input type="text" id="firstName" name="firstName" placeholder="First Name"/>
+    <input type="text" id="lastName" name="lastName" placeholder="Last Name"/>
+	<input type="email" id="email_signup" name="email" placeholder="Email"/>
+    <input type="password" id="password_signup" name="password" placeholder="Password"/>
+	
+				
+	<div id='radio'>
+	<div class='radio' id='gen'>
+		<h3>Gender</h3>
+		<input type="radio" id="male" name="gender" value="Male"></input>	
+		<label for="male">Male</label>
+		<input type="radio" id="female" name="gender" value="Female"></input>
+		<label for="female">Female</label>		
+	</div>	
+	<p id='birthday'>Birthday<input name="birthday" type="text" id="datepicker"/></p>
+	<div class='radio'>
+		<h3>Status</h3>
+		<input type="radio" id="single" name="marital" value="single" />
+		<label for="single">Single</label>
+		<input type="radio" id="married" name="marital" value="married" />
+		<label for="married">Married</label>
+		<input type="radio" id="relationship" name="marital" value="in relationship" />
+		<label for="relationship">In a relationship</label>		
+	</div>
+	</div>
+    <input type="submit" value="Join now" />
+	</form>
+</div>
+<div style='clear: both; color:#999;margin-left:944px; padding-top: 40px'>&#169 2013 Zuckerbergs</div>
+
+<script>
+$( "#radio" ).buttonset();
+$( "#datepicker" ).datepicker( {
+	changeMonth: true,
+	changeYear: true,
+	dateFormat: 'yy-mm-dd',
+	defaultDate: '1990-01-01'
+});
+</script>
+
+</body>
+</html>

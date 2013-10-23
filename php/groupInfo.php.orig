@@ -1,0 +1,28 @@
+<?php session_start() ?>
+<?php
+	require_once('includes/connection.php');
+	
+	$current_group = $_GET['group'];
+	$_SESSION['group'] = $current_group;
+	$current_user = $_SESSION['user'];
+	
+	$query = "SELECT * FROM interest_groups g WHERE g.name='{$current_group}'";
+	$result = mysql_query($query);
+	
+	if (!$result) die ("Unable to load group: ". mysql_error());
+	
+	$row = mysql_fetch_array($result);
+	
+	
+	$grp_name =	$row['name'];
+	$grp_admin  =	$row['admin'];
+	$grp_description  =	$row['description'];
+	$grp_icon  =	$row['icon'];
+	
+	echo "Group name = '{$grp_name}'</br>";
+	echo "Group admin = '{$grp_admin}'</br>";
+	echo "Group description = '{$grp_description}'</br>";
+	echo "Group icon = '{$grp_icon}'</br>";
+	
+	echo "<a href = 'php/joinGroup.php'>join this</a>"
+?>
